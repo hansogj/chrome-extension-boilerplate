@@ -1,0 +1,21 @@
+{
+  "name": "content",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.ts",
+  "scripts": {
+    "prebuild": "rm -rf build/",
+    "clean": "rm -rf build node_modules coverage *.tgz",
+    "test:ci": "npm run test -- --ci  --reporters --reporters=jest-junit",
+    "test": "NODE_ICU_DATA=node_modules/full-icu jest --runInBand",
+    "test:coverage": "npm run test:ci --  --coverage",
+    "test:watch": "npm run test -- --watch",
+    "build": "webpack --mode=production --node-env=production --config=webpack.config.js",
+    "ts": "tsc --noEmit -p tsconfig.json"
+  },
+  "author": "",
+  "license": "ISC",
+  "jest-junit": {
+    "outputDirectory": "./surefire-reports"
+  }
+}

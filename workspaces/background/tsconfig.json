@@ -1,0 +1,29 @@
+{
+    "compilerOptions": {
+        "outDir": "./build/",
+        "allowJs": true,
+        "allowSyntheticDefaultImports": true,
+        "sourceMap": true,
+        "declaration": true,
+        "moduleResolution": "node",
+        "noImplicitAny": true,
+        "module": "ESNext",
+        "target": "ESNext",
+        "lib": [
+            "dom",
+            "DOM.Iterable",
+            "es6",
+            "es5",
+            "es2019"
+        ]
+    },
+    "include": [
+        "./src"
+    ],
+    "exclude": [
+        "node_modules",
+        "__mocks__",
+        "dist",
+        "**/*spec**"
+    ],
+}

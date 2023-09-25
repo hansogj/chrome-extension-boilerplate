@@ -1,25 +1,37 @@
+// public/manifest.json
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
-  "icons": [
+  "name": "Extension workspace",
+  "description": "Boiler template to build chrome extension with typescript and react",
+  "version": "2.0.0",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "Extension workspace"
+  },
+  "background": {
+    "service_worker": "./background/index.js"
+  },
+  "host_permissions": [
+    "*://*/*"
+  ],
+  "content_scripts": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    },
-    {
-      "src": "logo192.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "logo512.png",
-      "type": "image/png",
-      "sizes": "512x512"
+      "matches": [
+        "*://*/*"
+      ],
+      "js": [
+        "./content/index.js"
+      ]
     }
   ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "permissions": [
+    "activeTab",
+    "storage",
+    "contextMenus",
+    "unlimitedStorage"
+  ],
+  "icons": {
+    "16": "./popup/logo192.png",
+    "48": "./popup/logo192.png"
+  }
 }
